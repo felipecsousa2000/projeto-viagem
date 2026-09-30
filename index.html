@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rota Livre</title>
+  <!-- CSS da biblioteca AOS e depois o nosso CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+  <!-- Menu fixo no topo -->
+  <header class="menu" id="menu">
+    <strong>Rota Livre</strong>
+    <nav>
+      <a href="#destinos">Destinos</a>
+      <a href="#video">Vídeo</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+    <!-- Abertura: vídeo de fundo + texto -->
+  <section class="hero">
+    <video src="videos/hero.mp4" poster="imagens/hero.jpg"
+           autoplay muted loop playsinline></video>
+    <h1>Descubra o Brasil do seu jeito</h1>
+    <p>Roteiros para viver experiências, não só tirar fotos.</p>
+    <a href="#destinos" class="botao">Ver destinos</a>
+  </section>
+
+  <!-- Destinos -->
+  <section class="secao" id="destinos">
+    <h2 data-aos="fade-up">Destinos em destaque</h2>
+    <div class="destinos">
+      <article class="destino" data-aos="fade-up">
+        <img src="imagens/noronha.jpg" alt="Fernando de Noronha">
+        <h3>Fernando de Noronha</h3><p>a partir de R$ 3.290</p>
+      </article>
+      <article class="destino" data-aos="fade-up" data-aos-delay="100">
+        <img src="imagens/gramado.jpg" alt="Gramado">
+        <h3>Gramado</h3><p>a partir de R$ 1.890</p>
+      </article>
+    </div>
+  </section>
+
+    <!-- Vídeo com controles -->
+  <section class="secao" id="video">
+    <h2 data-aos="fade-up">Sinta o destino antes de embarcar</h2>
+    <video src="videos/destino.mp4" poster="imagens/video-capa.jpg"
+           controls data-aos="zoom-in"></video>
+  </section>
+ 
+  <!-- Cadastro de e-mail -->
+  <section class="contato" id="contato">
+    <h2 data-aos="fade-up">Receba ofertas de viagem</h2>
+    <input type="text" id="email" placeholder="Digite seu e-mail">
+    <button class="botao" id="enviar">Quero receber</button>
+    <p id="mensagem"></p>
+  </section>
+ 
+  <footer><p>&copy; 2026 Rota Livre</p></footer>
+ 
+  <!-- JS do AOS primeiro, depois o nosso script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

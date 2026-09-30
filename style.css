@@ -1,0 +1,94 @@
+/* Reset e estilo geral */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: Arial, sans-serif; line-height: 1.6; color: #1f2d33; }
+h1, h2, h3 { font-family: Georgia, serif; }
+ 
+/* Menu preso no topo, transparente sobre o vídeo */
+.menu {
+  position: fixed; top: 0; width: 100%; z-index: 100;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 18px 5%; color: #fff; transition: background 0.3s;
+}
+.menu strong { font-size: 24px; }
+.menu a { color: #fff; text-decoration: none; margin-left: 20px; }
+ 
+/* Classe colocada pelo JavaScript depois de rolar a página */
+.menu-rolou { background: #0b3c49; }
+
+/* Abertura: ocupa a janela toda, texto centralizado */
+.hero {
+  position: relative; z-index: 0; height: 100vh; overflow: hidden;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center; color: #fff;
+}
+ 
+/* Vídeo cobre a abertura toda, atrás do texto e escurecido */
+.hero video {
+  position: absolute; top: 0; left: 0; z-index: -1;
+  width: 100%; height: 100%; object-fit: cover; filter: brightness(0.55);
+}
+.hero h1 { font-size: clamp(32px, 6vw, 56px); margin-bottom: 16px; }
+.hero p { margin-bottom: 28px; }
+ 
+/* Título e frase sobem ao carregar a página */
+.hero h1, .hero p { animation: subir 1s ease-out; }
+@keyframes subir {
+  from { opacity: 0; transform: translateY(40px); }
+}
+ 
+/* Botão laranja (também usado no cadastro de e-mail) */
+.botao {
+  background: #ff8a3d; color: #fff; text-decoration: none;
+  padding: 14px 34px; border: none; border-radius: 30px;
+  font-size: 16px; cursor: pointer;
+}
+
+/* Toda seção: largura máxima, centralizada, com espaço em volta */
+.secao {
+  max-width: 1100px; margin: 0 auto;
+  padding: 80px 24px; text-align: center;
+}
+.secao h2 { font-size: 34px; color: #0b3c49; margin-bottom: 40px; }
+ 
+/* Grade que ajusta o número de colunas ao tamanho da tela */
+.destinos {
+  display: grid; gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+ 
+/* Card: moldura para a foto e para o texto por cima dela */
+.destino {
+  position: relative; height: 260px; overflow: hidden;
+  border-radius: 14px; color: #fff; text-align: left;
+}
+.destino img {
+  width: 100%; height: 100%; object-fit: cover;
+  filter: brightness(0.75); transition: transform 0.5s;
+}
+.destino:hover img { transform: scale(1.1); }
+ 
+/* Nome e preço posicionados sobre a foto */
+.destino h3, .destino p { position: absolute; left: 20px; bottom: 20px; }
+.destino h3 { bottom: 46px; }
+
+/* Vídeo com cantos arredondados */
+.secao video { width: 100%; max-width: 860px; border-radius: 16px; }
+ 
+/* Cadastro de e-mail com fundo escuro */
+.contato {
+  background: #0b3c49; color: #fff;
+  text-align: center; padding: 70px 24px;
+}
+.contato h2 { margin-bottom: 20px; }
+.contato input {
+  padding: 14px 18px; border: none; border-radius: 30px;
+  font-size: 16px; margin-right: 8px;
+}
+#mensagem { margin-top: 16px; font-weight: bold; }
+ 
+footer {
+  background: #072a33; color: #9db4bb;
+  text-align: center; padding: 24px;
+}
